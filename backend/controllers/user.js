@@ -1,7 +1,19 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
+const maskData = require('maskdata');
+const passwordValidator = require('password-validator');
 
+const schemaPassValid = new passwordValidator();
+
+schemaPassValid
+.is().min(8)
+.is().max(50)
+.has().uppercase()
+.has().lowercase()
+.has().digits(2)
+.has().not().spaces()
+.is().not().oneOf(['Passw0rd', 'Password123']);
 
 exports.signup = (req, res, next) => {
     bcrypt.hash(req.body.password, 10)
