@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
-const maskData = require('maskdata');
+/*const maskData = require('maskdata');*/
 const passwordValidator = require('password-validator');
 
 const schemaPassValid = new passwordValidator();

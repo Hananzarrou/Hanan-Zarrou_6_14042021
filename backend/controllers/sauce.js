@@ -13,8 +13,8 @@ exports.createSauce = (req, res, next) => {
     description: xss(sauceObject.description),
     mainPepper: xss(sauceObject.mainPepper),
     imageUrl: `${req.protocol}://${req.get('host')}/images/${req.file.filename}`,
-    likes: '0',
-    dislikes: '0'
+    likes: 0,
+    dislikes: 0
   });
   sauce.save()
     .then(() => res.status(201).json({ message: 'Objet enregistré !'}))
