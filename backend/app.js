@@ -8,7 +8,7 @@ const helmet = require("helmet");
 
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
-
+console.log("mongopassword", process.env.MONGO_PASSWORD)
 //mongoose.connect(`mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.5fuiw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,//
 mongoose.connect('mongodb+srv://hananprojet6:13131313@cluster0.5fuiw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   { useNewUrlParser: true,
